@@ -34,6 +34,7 @@ namespace OrdinaryMagicianItems
             gun.barrelOffset.transform.localPosition += new Vector3(-0.55f, -0.160f, 0f);
             gun.quality = PickupObject.ItemQuality.SPECIAL;
             gun.gunClass = GunClass.PISTOL;
+            gun.PreventStartingOwnerFromDropping = true;
 
             var controller = gun.gameObject.AddComponent<MiniHakkero>();
             controller.idle2Animation = GunExt.UpdateAnimation(gun, "idle2");

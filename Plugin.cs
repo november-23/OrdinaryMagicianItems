@@ -53,7 +53,8 @@ namespace OrdinaryMagicianItems
             incidentResolverKit.bonusSynergies = [IncidentResolverKitSynergy];
             var extend = CustomSynergies.Add("Extend!", ["spapi:shanghai"], ["heart_holster", "heart_lunchbox", "heart_locket", "heart_bottle", "heart_purse"]);
             extend.bonusSynergies = [ExtendSynergy];
-            AmmoRegenSynergyProcessor processor = Game.Items["staff_of_firepower"].gameObject.AddComponent<AmmoRegenSynergyProcessor>();
+
+            var processor = Game.Items["staff_of_firepower"].gameObject.AddComponent<AmmoRegenSynergyProcessor>();
             processor.PreventGainWhileFiring = false;
             processor.RequiredSynergy = CheatAgainstTheImpossibleSynergy;
             processor.AmmoPerSecond = 1f;

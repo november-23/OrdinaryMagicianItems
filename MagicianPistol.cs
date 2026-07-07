@@ -34,6 +34,7 @@ namespace OrdinaryMagicianItems
             gun.InfiniteAmmo = true;
             gun.quality = PickupObject.ItemQuality.SPECIAL;
             gun.gunClass = GunClass.PISTOL;
+            gun.PreventStartingOwnerFromDropping = true;
 
             var animator = gun.GetComponent<tk2dSpriteAnimator>();
             var offsets = new Dictionary<string, List<Vector2>>
