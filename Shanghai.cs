@@ -66,6 +66,7 @@ namespace OrdinaryMagicianItems
             if (!collection)
                 collection = SpriteBuilder.ConstructCollection(companion.gameObject, $"{companion.name}_collection");
 
+            var asmb = typeof(Plugin).Assembly;
             var attackLeftFrames = new List<string>()
             {
                 "OrdinaryMagicianItems/Resources/companion/attack_left/shanghai_attack_front_left_001",
@@ -75,7 +76,7 @@ namespace OrdinaryMagicianItems
                 "OrdinaryMagicianItems/Resources/companion/attack_left/shanghai_attack_front_left_005",
                 "OrdinaryMagicianItems/Resources/companion/attack_left/shanghai_attack_front_left_006"
             };
-            var attackLeftAnim = SpriteBuilder.AddAnimation(companion.spriteAnimator, collection, [..attackLeftFrames.Select(x => SpriteBuilder.AddSpriteToCollection(x, collection))], "attack_left", tk2dSpriteAnimationClip.WrapMode.Once);
+            var attackLeftAnim = SpriteBuilder.AddAnimation(companion.spriteAnimator, collection, [..attackLeftFrames.Select(x => SpriteBuilder.AddSpriteToCollection(x, collection, asmb))], "attack_left", tk2dSpriteAnimationClip.WrapMode.Once);
             attackLeftAnim.fps = 6;
 
             var attackRightFrames = new List<string>()
@@ -87,7 +88,7 @@ namespace OrdinaryMagicianItems
                 "OrdinaryMagicianItems/Resources/companion/attack_right/shanghai_attack_front_right_005",
                 "OrdinaryMagicianItems/Resources/companion/attack_right/shanghai_attack_front_right_006"
             };
-            var attackRightAnim = SpriteBuilder.AddAnimation(companion.spriteAnimator, collection, [.. attackRightFrames.Select(x => SpriteBuilder.AddSpriteToCollection(x, collection))], "attack_right", tk2dSpriteAnimationClip.WrapMode.Once);
+            var attackRightAnim = SpriteBuilder.AddAnimation(companion.spriteAnimator, collection, [.. attackRightFrames.Select(x => SpriteBuilder.AddSpriteToCollection(x, collection, asmb))], "attack_right", tk2dSpriteAnimationClip.WrapMode.Once);
             attackRightAnim.fps = 6;
 
             companion.aiAnimator.AssignDirectionalAnimation("attack", new DirectionalAnimation()
